@@ -1,11 +1,12 @@
 # Site wide configuration
 
-title: Site Title
+title: leewc
 locale: en_US
-description: Describe your website here.
-logo: site-logo.png
+description: A blog on programming, software development and thoughts.
+logo: meow.jpg
 search: true
-url: http://localhost:4000
+url: https://github-alien1959.c9users.io
+enforce_ssl: "leewc.com"
 
 # Jekyll configuration
 
@@ -48,15 +49,15 @@ titlecase: true
 
 # Site owner
 owner:
-  name: Your Name
-  avatar: bio-photo.jpg
-  email: you@email.com
+  name: Wen Chuan Lee
+  avatar: # leaving this blank for now
+  email: lee@leewc.com
   disqus-shortname:
-  twitter: #username
+  twitter: wenchuanlee
   facebook: #username
-  github: #username
-  stackexchange: #http://stackoverflow.com/users/123456/username
-  linkedin: #username
+  github: leewc
+  stackexchange: 4512948/matrixanomaly
+  linkedin: wenchuanlee
   instagram: #username
   flickr: #username
   tumblr: #username
@@ -64,7 +65,7 @@ owner:
   weibo: #userid
   google:
     plus: #username
-    analytics:
+    analytics: UA-64050901-1
     verify:
     ad-client:
     ad-slot:
