@@ -5,7 +5,7 @@ locale: en_US
 description: A blog on programming, software development and thoughts.
 logo: meow.jpg
 search: true
-url: https://github-alien1959.c9users.io
+url: https://leewc.com
 enforce_ssl: "leewc.com"
 
 # Jekyll configuration
