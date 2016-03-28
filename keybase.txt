@@ -1,0 +1,77 @@
+==================================================================
+https://keybase.io/leewc
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://leewc.com
+  * I am leewc (https://keybase.io/leewc) on keybase.
+  * I have a public key with fingerprint ABE2 DB47 91F0 4103 8CF8  E96F FAE8 12E1 1D15 2AAD
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.8.23"
+        },
+        "key": {
+            "eldest_kid": "0101b7e6703d25249d856dfc014ccbe81f8bc27333315ef481245d9e4acc3db3c6840a",
+            "fingerprint": "abe2db4791f041038cf8e96ffae812e11d152aad",
+            "host": "keybase.io",
+            "key_id": "fae812e11d152aad",
+            "kid": "0101b7e6703d25249d856dfc014ccbe81f8bc27333315ef481245d9e4acc3db3c6840a",
+            "uid": "e22d9fc13293ccace3967fec035eed19",
+            "username": "leewc"
+        },
+        "service": {
+            "hostname": "leewc.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1447308019,
+    "expire_in": 157680000,
+    "prev": "55ce56933b4391123286e157e341be964c0631a5645282254f6b4b40c3785c3c",
+    "seqno": 2,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtkntQFVUcxy8vQx6F1kQoErPDVDJ02bNnd+/uVTTeV03ChoyR4LJ79iwsj7uX
+ey+vkBInx64OA4OK0FXEApGSxJTGwUcNNDhMDpFjOeOQSOaMUAQGFZlQuwzN2Ex/
+dv46c87n9/19f4/6YB+Dv9cvcf1/xX/1M+/15bho2J4UPVNFiKpUSZirCFSkYJtL
+v9mEYkyYiUJcKQpObFTUSJsqYWOBM3KJiSHKsMOpqDaNIo2ckYJEdYzO69G4SMJO
+l7VQkfRfQALRhFkTCSWKoWhe4hhWkhEJaIREzAGZExFlgtoBDJZpDlA0I/GYFhCC
+kggRy9GkoCWUFVsedtgdim6REERMSSJt4oFM0oCEHJI5zLOyLGiSFAZAAgwlCJIW
+mK86Xf8qhlh0al209x/8/+y7dFEOU5TEywhAiocICQhDnjXJGJGQwVgCvA46sWOp
+8UUYlyO9o9pTmYKw3lW9jEe/jUgt1qLsDtWlIrVIe853uexOsx7mqrTrXDkWrUsK
+VlGxSVoHH51cA9BQ5FJ0TUDTJkhyJOBjCFxhVxzYqmgIYEwsR2pHT4TLNE2GQZhh
+eQhFGvIAUJDiWKxhGNJA1CZAI5KFQGBYmqE4imJomRVpkSYRNHEMgojQiyqxqYSZ
+0nwKeZqkU8mzCa5SByaq3d7hvgYvf8MyP299Nw0By0P+WdgvjoUYPmbjupKb1Nmw
+TckXYfu90cbbsz5VV6+H5m5d3VITvL+pNz+ighgcMN2MLd+WkdZybXRh4+o7X089
+O3nCTda+ujKn+/0H4lxeUwSsnRsImN+Q/sNruyKG3gGeIxN+gQ01jRR864XMZ9z3
+Xjld+UFvXNJMXcHh9LEX1zS2dFVnD4cfuDy1YboARmW13Ex9bP3zZzCVx7gf70zZ
+mI1HNg/3uJ1dq15CE+e3Hh/puxS22y9yf2SJtT3UqgKx3b3L89yV/jVRrb61ayeG
+U+C5A7HDoVd+s6dMtIZOdDvPfbL7j6r61rplk+aGOfrUpOXbxLbLyas8L4/M5OSs
+KPhs8mT89zXM1ZUg8fcsZ8l4VFiA+ay//fr0pb4/xVy+Y0dxUZtFiDwqsX5nEubb
+7qiW9AubqK6gwba9dz3feAeKghhyYuzT7Rfka8azQviWj/akjpZ39Be3PEHOjGfE
+tmUcJmbf+HD4UHxSa8OCJZBIPHZ6/b6p428OdR7sNS/cDowL3BNW67kx/d6Py1N/
+jS5ce2sIV9xvvg8GUzb3JUUNQNfOk+smm+csKP7gPtUecOjhrdefTps/wsH4o8Cn
+tCChNCe3ekzcm7supOP8zh77jYQHji1Per7L6vaezwzC2dZw98W0hNLGz6XonM6e
+bclPPfyp8lTi2zHN9UG+ht3v7rhbp3bXW1YEj2XCvwE=
+=4Pcp
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/leewc
+
+==================================================================
