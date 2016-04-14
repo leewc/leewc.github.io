@@ -41,11 +41,40 @@ Goals:
 - Keep history intact
 - Separate branches for each repo merged
 
+One more prerequisite, **have backups handy** before beginning the merge, it's too easy to fudge things up, I have, so always having a backup copy of your repositories
+never hurt. *This is a disclaimer!*
+
 # How to do it:
+
+## Step 0.
+
+We need to first prepare the old repo for merging.
+
+On the repo you want to merge, I'll use `old_A` as the repo name, create a directory with a *unique* name. It is important this directory name is not used in the other 
+repos you want to merge with, avoiding potential merge conflicts. Usually creating a directory with the name of the project and then moving it all down one level works.
+
+On the **current** root directory of your git repository (named as a folder `old_A`):
+
+~~~ bash
+    $ cd ..
+    $ mkdir project_A_repo
+    $ mv old_A/.git/ project_A_repo/
+    $ mv old_A/.gitignore project_A_repo (if you have this)
+    $ mv old_A/ project_A_repo/project_A
+    $ cd project_A_repo
+    $ git add project_A
+    $ git commit -am 'Preparing Project A repository for merging.'
+    $ git push (to sync commit with origin)
+~~~
+
+Here `project_A` is the unique name of the folder. This is weird because we can't move all files at the current directory one level down without going up one level.
+
+**You can also** manually `git mv subdir project_A/subdir` for each sub directory and file, *I did that because it was simpler and didn't have too many folders in each repo*.
+Or try something like [this](http://stackoverflow.com/a/35201800/4512948). 
 
 ## Step 1.
 
-Initialize an empty repository in an empty directory with `git init`. This will be our 'master' repository.
+In a different directory that does not contain a git repo, initialize an empty repository in an empty directory with `git init`. This will be our 'master' repository.
 
 ## Step 2.
 
@@ -76,7 +105,11 @@ If we list the branches in our repo with `git branch --all`. This is the output
 
 ## Step 5.
 
-Now checkout the clean branch with `git checkout clean`. We're on the `clean` branch.
+Checkout the clean branch with `git checkout clean`. 
+
+Notice that **we're now on the** `clean` **branch**.
+
+(*side note: if you're now rereading this step merging in other repos; you must be on the `clean` branch before proceeding!*)
 
 ## Step 6.
 
@@ -130,7 +163,15 @@ Also, if you ran `git branch --all` you'll get a `master` branch, `clean` branch
 
 ## Step 10.
 
-Looks good, go back to the master branch, and merge in the `project_A` branch. We have a couple options here. If you do a regular `git merge`, all commits will
+Looks good, **go back to the master branch**.
+
+~~~bash
+    $ git checkout master
+    Switched to branch 'master'
+    (some output regarding master branch)
+~~~
+
+Now we merge in the `project_A` branch. We have a couple options here. If you do a regular `git merge`, all commits will
 show up on master, which is great if you want GitHub to track and show more commits, but this gets out of hand when you merge other projects, as the commits are
 ordered by time, and you get nonsensical chronology, unrelated commits intersecting. It's up to you, but let's do `git merge --squash` instead so we have one
 squashed commit per project on `master`.
@@ -154,7 +195,7 @@ Make a commit showing what you did. (this won't happen if you didn't do `squash`
 
 ## Step 12.
 
-Time to delete the remote branch since we don't need to keep a reference to it.
+Time to delete the remote branch url since we don't need to keep a reference to it.
 
 ~~~bash
     $ git remote remove remote_A 
@@ -164,9 +205,12 @@ Time to delete the remote branch since we don't need to keep a reference to it.
         project_A
 ~~~
 
+You have now removed the remote `url` reference to `proj_A`. 
+
 ## Step 13.
 
-You can now delete your old remote branch, we don't need it anymore.
+Just wanted to highlight at this point you can now delete your old repo, we don't need it anymore. In this example I can delete the repo at `https://github.com/username/proj_A.git`.
+Of course if you're messing with your one and only repo, **it's better you wait till we're finished with the merge**!
 
 ## Step 14.
 
@@ -181,13 +225,17 @@ Add a new remote for the master repo, and then push the branch up to your remote
 
 ## Step 15.
 
-Repeat [Step 5](#step-5) to [Step 13](#step-13) for other repositories, pushing the repository to origin after with `git push -u origin name_of_branch`
+First Repeat [Step 0](#step-0). Then, repeat [Step 5](#step-5) to [Step 13](#step-13) for other repositories, pushing the repository to origin after with `git push -u origin name_of_branch`
 
 ## Step 16.
 
-You should now have a nice 'master' repo. With commits on the master being squashed commits, and each branch holding it's own commit history.
+You should now have a nice 'master' repo. With commits on the master being squashed commits, and each branch holding it's own commit history. Rejoice!
 
 ![apollo-academia-screenshot](/images/articles/apollo-academia.png)
+
+Lastly, credit also goes to Julio's [post on merging repos here](http://julipedia.meroh.net/2014/02/how-to-merge-multiple-git-repositories.html), it definitely helped.
+
+Also, special thanks to [Nate](https://twitter.com/contraultra) for beta testing this tutorial and correcting mistakes!
 
 [^1]: the university I go to provides Enterprise GitHub!
 [^2]: by recently I meant January, and *repo can be found [here](https://github.com/leewc/apollo-academia-umn)*.
