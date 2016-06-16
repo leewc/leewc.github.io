@@ -1,0 +1,2 @@
+echo 'Starting server with _config-dev.yml at port' $PORT 'and host' $IP '...'
+bundle exec jekyll serve --port $PORT --host $IP --config _config.yml,_config-dev.yml
