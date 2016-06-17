@@ -13,7 +13,7 @@ date: 2016-05-09T16:58:52+00:00
 ---
 
 Recently as part of my distributed systems assignment we were required to write a map-reduce framework that would perform Mergesort (or SortMerge) on a very large file. The central idea is to break the file 
-up into chunks and then sort those chunks, before merging all the files into one.
+up into chunks and then sort those chunks, before merging all the files into one. The project can be found [here](https://github.com/leewc/thrift-distributed-systems-projects/tree/master/a3-map-reduce).
 
 Initially I wrote a simple merge that would read in 2 files as buffered streams and output the sorted file as another file, continuing the process until we have one file left. After rereading the 
 requirements I realized we actually have to perform a k-way merge sort, where k is the number of files to read from in each merge process.
@@ -171,7 +171,7 @@ Here's the code for my `merge` method, it takes a `MergeTask` object that contai
 ~~~
 
 Output for the above method would be space-separated-integers like `1 3 5 6 9 10 200 500` written to the output file.
-For completeness this is my MergeTask class, although you should just adapt the merge code to suit your use-case.
+For completeness this is my MergeTask class, although you should just adapt the merge code to suit your use-case. Original Java files can be found [here](https://github.com/leewc/thrift-distributed-systems-projects/tree/master/a3-map-reduce/src).
 
 ~~~java
 import java.util.List;
@@ -198,6 +198,8 @@ With all this we now have a nice lazy k-way mergesort function, where by \\(k\\)
 our stress-testing we managed to merge over 50 files at 100 KB each without any problems. This algorithm will scale well on larger streams. Hopefully this will be helpful to you too!
 
 *The title image above was part of a screenshot of running 17 VMs performing merge sort in a distributed environment.
+
+**UPDATE 2016-06-16** : Added repository links to actual [project](https://github.com/leewc/thrift-distributed-systems-projects/tree/master/a3-map-reduce/) hosted publicly on GitHub!
 
 [^1]: Coincidentally, this happened to be a software design question I was asked at an interview from a well-known and *very* large company, so it might come in handy for you too!
 
