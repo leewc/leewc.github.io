@@ -124,6 +124,12 @@ and just for laughs...
 This brings my entire process to a total of 2 months and 6 days. **Don't be worried** if your card doesn't follow this timeline, USCIS has a lot of cases to deal with, so it depends on the number of applications, 
 I know of friends who graduated last december and waited almost five months for it, while others received it less than a month. Applying ASAP (60 days before graduation) is never a bad thing, right?
 
+# What should I do now if my status hasn't changed after 75 days?
+
+As my friend [Su Ann](https://www.facebook.com/KohSuAnn) has mentioned to me after publishing a draft of this, if after 75 days if status hasn't changed you can [ask to expedite](https://egov.uscis.gov/e-Request/Intro.do) if you need the card urgently. 
+This also depends on the number of applicants; such as if you apply late April or May, it will take longer for the card to process due to the increased number of applicants.
+
+
 # Additional Advice if you want it.
 
 - Be sure to read the instructions posted by your University's Internation Student and Scholar Services website, every university has a slightly different way of approaching it. Check with them and meet with an advisor to be sure of what you need to sdo.
@@ -136,4 +142,4 @@ I know of friends who graduated last december and waited almost five months for 
 - Again, **always** check with your school's international office! They're the experts, not some random guy on the Internet with a nice looking blog.
 - The University of Washington has a [well written comprehensive guide on applying for an OPT and the process](https://iss.washington.edu/employment/f1-employment/opt/12-months) if you feel your University's one is lacking.
 
-Lastly do let me know if this helped, or share it with someone else who's going through (or will go through) the motions of applying for the EAD!
+What are your experiences? Or questions maybe others could help? Lastly do let me know if this helped, or share it with someone else who's going through (or will go through) the motions of applying for the EAD!
