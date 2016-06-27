@@ -285,6 +285,8 @@ Additional References if you're interested in taking security up a notch, (note 
 -  [*Not encryption but it's nice to have*: Installing Plymouth on Debian 8](https://github.com/konklone/debian/blob/master/installing.md)
 -  [Manual Full Disk Encryption](http://thesimplecomputer.info/full-disk-encryption-with-ubuntu)
   
+I'd like to also thank my friend [Jeff](https://commentedcode.org) for showing me a logical view of the insane world of encryption, and implementing what I want on GNU/Linux.
+
 Also thanks to [this AskUbuntu question](http://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot), except we don't use a keyfile for security purposes [^4].
 
 Lastly, it's pretty cool that encryption is built into the Debian and ElementaryOS Freya installation, though this might not be what we want, it's a great one click setup,
