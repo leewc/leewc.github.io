@@ -122,7 +122,7 @@ and just for laughs...
 
 
 This brings my entire process to a total of 2 months and 6 days. **Don't be worried** if your card doesn't follow this timeline, USCIS has a lot of cases to deal with, so it depends on the number of applications, 
-I know of friends who graduated last december and waited almost five months for it, while others received it less than a month. Applying ASAP (60 days before graduation) is never a bad thing, right?
+I know of friends who graduated last december and waited almost five months for it, while others received it less than a month. Applying ASAP (90 days before graduation) is never a bad thing, right?
 
 # What should I do now if my status hasn't changed after 75 days?
 
@@ -133,8 +133,8 @@ This also depends on the number of applicants; such as if you apply late April o
 # Additional Advice if you want it.
 
 - Be sure to read the instructions posted by your University's Internation Student and Scholar Services website, every university has a slightly different way of approaching it. Check with them and meet with an advisor to be sure of what you need to sdo.
-- Apply as soon as you can, which is 60 days (2 months) before the end of your degree program.
-- If you have plans to relax before you start work, you can set a start date as late as 60 days from your program end date. This would maximize your OPT work period.
+- Apply as soon as you can, which is 90 days (3 months) before the end of your degree program.
+- If you have plans to relax before you start work, you can set a start date as late as 60 days **from your program end date**. This would maximize your OPT work period.
 - You can apply for an EAD **without** any job offer. In fact most people do this and then use up to 90 days from the OPT start date to secure a job.
 - I've read [articles](http://geekwrites.blogspot.com/2012/08/how-to-expedite-processing-of-your-opt.html) about how to expedite the processing of the EAD, which contain advice not given by my universities international student services, so it might be a good idea to check with them, I personally can't 
   vouch from experience whether the tips I found online work, such as attaching the offer letter when applying. *I didn't manage* to expedite my request when I attempted to a month in of my application.
@@ -143,3 +143,9 @@ This also depends on the number of applicants; such as if you apply late April o
 - The University of Washington has a [well written comprehensive guide on applying for an OPT and the process](https://iss.washington.edu/employment/f1-employment/opt/12-months) if you feel your University's one is lacking.
 
 What are your experiences? Or questions maybe others could help? Lastly do let me know if this helped, or share it with someone else who's going through (or will go through) the motions of applying for the EAD!
+
+**Edited June 28, 2016**: I previously made an error on the OPT start and end dates. One can start 90 days **before** program end date, and as late as 60 days **after** program end date. Here's info straight from the 
+[USCIS page](https://www.uscis.gov/eir/visa-guide/f-1-opt-optional-practical-training/understanding-f-1-opt-requirements), (thank you Felicity for pointing it out): 
+
+> **How do I apply for F-1 OPT?**: Once you receive a recommendation for post-completion OPT from your Designated School Official (DSO) to pursue OPT, you must apply for an employment authorization document (EAD) 
+with USCIS within 30 days. Additionally, you may file up to 90 days prior to your program end-date and not later than 60 days after your program end date. 
