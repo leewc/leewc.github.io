@@ -7,8 +7,7 @@ categories: articles
 tags: [tutorial, ubuntu, linux, debian, encryption]
 comments: true
 share: true
-image:
-  feature: articles/enc-tut/s7-deb.png
+image: images/articles/enc-tut/s7-deb.png
 date: 2016-06-16
 ---
 

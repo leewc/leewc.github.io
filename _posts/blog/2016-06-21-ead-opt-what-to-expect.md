@@ -7,8 +7,7 @@ categories: blog
 tags: [visa, opt, ead]
 comments: true
 share: true
-image:
-  feature: blog/chicagoPier.jpg
+image: images/blog/chicagoPier.jpg
 date: 2016-06-21
 ---
 

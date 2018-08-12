@@ -20,7 +20,7 @@ title: "leewc"
 description: "A blog on programming, software development and thoughts."
 baseurl: # the subpath of your site, e.g. "/blog"
 url: https://leewc.com
-logo: meow.jpg
+logo: /images/meow.jpg
 date_format: "%B %-d, %Y"
 read_time: true
 words_per_minute: 180
@@ -120,7 +120,7 @@ footer_links:
     icon: fab fa-twitter-square
   - title: LinkedIn
     url: https://linkedin.com/in/wenchuanlee
-    icon: fab fa-linkedin-square
+    icon: fab fa-linkedin-in
   - title: StackOverflow
     url: https://stackoverflow.com/users/4512948/matrixanomaly
     icon: fab fa-stack-overflow

@@ -6,9 +6,7 @@ categories: blog
 tags: [helloworld, ouroboros]
 comments: true
 share: true
-image:
-  feature: blog/sausalito.jpg
-  credit: Shot at Sausalito, CA
+image: images/blog/sausalito.jpg
 ---
 
 `Hello World!`

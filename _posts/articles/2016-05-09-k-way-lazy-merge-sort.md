@@ -7,8 +7,7 @@ categories: articles
 tags: [java, tutorial]
 share : yes
 comments : yes
-image:
-  feature: articles/mapreduce-thrift.png
+image: images/articles/mapreduce-thrift.png
 date: 2016-05-09T16:58:52+00:00
 ---
 

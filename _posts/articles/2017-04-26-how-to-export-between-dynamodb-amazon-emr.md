@@ -8,8 +8,7 @@ tags: [amazon,aws,dynamodb,data,migration,emr]
 comments: true
 share: true
 readtime: true
-image:
-  feature: articles/emr-header.jpg
+image: images/articles/emr-header.jpg
 date: 2017-07-09
 ---
 
