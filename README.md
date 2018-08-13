@@ -1068,9 +1068,6 @@ To override the default JavaScript bundled in the theme, do one of the following
 
 2. Copy from this repo.
 
-<<<<<<< HEAD
-So Simple takes advantage of Sass and data files to make customizing easier and requires Jekyll 3.x.
-=======
    * Copy the contents of [`/assets/js/main.js`](assets/js/main.js)
      to `<your_project>`.
    * Customize what you want inside `<your_project>/assets/js/main.js`.
@@ -1198,13 +1195,9 @@ When submitting a pull request:
 * [Lunr](http://lunrjs.com/)
 
 ---
->>>>>>> b571fc7c1baac7eb39fbb2dbd876e065135e8103
 
 ## License
 
-<<<<<<< HEAD
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mmistakes/so-simple-theme/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-=======
 The theme is available as open source under the terms of the [MIT License](LICENSE).
 
 [jekyll-seo-tag]: https://github.com/jekyll/jekyll-seo-tag
@@ -1212,4 +1205,3 @@ The theme is available as open source under the terms of the [MIT License](LICEN
 [jekyll-paginate]: https://github.com/jekyll/jekyll-paginate
 [jekyll-sitemap]: https://github.com/jekyll/jekyll-sitemap
 [jekyll-archives]: https://github.com/jekyll/jekyll-archives
->>>>>>> b571fc7c1baac7eb39fbb2dbd876e065135e8103
