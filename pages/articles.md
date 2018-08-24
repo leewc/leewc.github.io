@@ -5,5 +5,5 @@ taxonomy: articles
 permalink: /articles/
 show_excerpts: true
 entries_layout: list
-search_omit: true
+search: false
 ---

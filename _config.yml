@@ -33,6 +33,8 @@ google_fonts:
 google_analytics: UA-64050901-1
 disqus:
   shortname: leewc
+twitter:
+  username: wenchuanlee
 
 # dangit, forgot why I added this here before the merge. :(
 enforce_ssl: "leewc.com"
@@ -43,14 +45,12 @@ liquid:
 
 permalink:   /:categories/:title/
 markdown:    kramdown
+feed:
+  path: atom.xml
 highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
-gems:
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
 
 kramdown:
   input: GFM
@@ -72,7 +72,7 @@ search_full_content: false # can have performance implications for large sites
 
 # Taxonomy pages
 # category_archive_path: "/categories/#"
-# tag_archive_path: "/tags/#"
+tag_archive_path: "/tags/#"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

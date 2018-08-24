@@ -1,10 +1,10 @@
 ---
 title: Resume
 excerpt: ""
-layout: page-nositelogo
+layout: category
 permalink: /resume/
 sitemap: true
-search_omit: false
+search_omit: true
 ---
 
 <div style="text-align: center" markdown="1"> [(One-page, official resume)](/assets/leewc-resume.pdf)
