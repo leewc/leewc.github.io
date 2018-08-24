@@ -4,7 +4,9 @@ title: About Me
 excerpt: ""
 modified: 2016-03-26T13:04:38.564948-04:00
 permalink: /about/
-image: images/seagull.jpg
+image:
+    path: images/seagull.jpg
+    thumbnail: images/seagull.jpg
   
 ---
 

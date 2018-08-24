@@ -103,8 +103,8 @@ defaults:
       share: true
 
 # # Site Author
-# author:
-#   name: Wen Chuan Lee
+author:
+  name: Wen Chuan Lee
 #   picture:
 #   email:
 #   twitter:

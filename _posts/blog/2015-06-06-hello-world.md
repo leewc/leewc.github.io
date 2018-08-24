@@ -6,7 +6,9 @@ categories: blog
 tags: [helloworld, ouroboros]
 comments: true
 share: true
-image: images/blog/sausalito.jpg
+image:
+    path: images/blog/sausalito.jpg
+    thumbnail: images/blog/sausalito.jpg
 ---
 
 `Hello World!`
