@@ -7,8 +7,8 @@ tags: [helloworld, ouroboros]
 comments: true
 share: true
 image:
-  feature: blog/sausalito.jpg
-  credit: Shot at Sausalito, CA
+    path: images/blog/sausalito.jpg
+    thumbnail: images/blog/sausalito.jpg
 ---
 
 `Hello World!`

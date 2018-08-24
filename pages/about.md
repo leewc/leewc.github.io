@@ -5,7 +5,8 @@ excerpt: ""
 modified: 2016-03-26T13:04:38.564948-04:00
 permalink: /about/
 image:
-  feature: seagull.jpg
+    path: images/seagull.jpg
+    thumbnail: images/seagull.jpg
   
 ---
 

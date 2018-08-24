@@ -1,9 +1,9 @@
 ---
 title: Projects
 excerpt: A few thing's I've worked on.
-layout: page-nositelogo
+layout: category
 permalink: /projects/
-search_omit: false
+search: false
 ---
 
 ## ReSpot (Memomemo.xyz)

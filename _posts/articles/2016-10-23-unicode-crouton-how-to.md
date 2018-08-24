@@ -7,8 +7,9 @@ categories: articles
 tags: [chrome, crouton]
 comments: true
 share: true
-image:
-  feature: articles/chrome/unicode-5.jpg
+image: 
+    path: images/articles/chrome/unicode-5.jpg
+    thumbnail:  images/articles/chrome/unicode-5.jpg
 date: 2016-10-23
 ---
 

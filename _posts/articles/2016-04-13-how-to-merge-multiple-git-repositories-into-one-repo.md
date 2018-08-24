@@ -7,8 +7,6 @@ categories: articles
 tags: [tutorial, git]
 comments: true
 share: true
-image:
-  feature:
 date: 2016-04-13T01:25:28+00:00
 ---
 

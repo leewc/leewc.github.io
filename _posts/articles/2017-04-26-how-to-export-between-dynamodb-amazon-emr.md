@@ -9,7 +9,8 @@ comments: true
 share: true
 readtime: true
 image:
-  feature: articles/emr-header.jpg
+    path: images/articles/emr-header.jpg
+    thumbnail: images/articles/emr-header.jpg
 date: 2017-07-09
 ---
 
