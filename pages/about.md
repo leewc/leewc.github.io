@@ -2,7 +2,7 @@
 layout: page
 title: About Me
 excerpt: ""
-modified: 2016-03-26T13:04:38.564948-04:00
+modified: 2019-02-27T22:04:38.564948-07:00
 permalink: /about/
 image:
     path: images/seagull.jpg
@@ -10,13 +10,13 @@ image:
   
 ---
 
-I'm Lee, currently a senior studying *Computer Science* at the **University of Minnesota, Twin Cities**. 
+My name is Lee[^1], and I'm currently working at the world's most customer centric company, **Amazon.com** as a Software Development Engineer for about 2.5 years now. 
 
-I usually go by my last name as my first name, because it's a common occurrence people think 'Chuan' is my middle name which gets truncated to Wen Lee. I definitely prefer just 'Lee' over the single 'Wen'. 
+I studied Computer Science at the University of Minnesota, Twin Cities. 
 
-I'm from originally **Malaysia** where it's easily over 32°C [89°F] and survived the cold winters here in Minnesota where it's usually -25°C [-13°F]. At this rate I've seen and lived with enough snow for a lifetime. I am also 8981 miles away (14453.5 kilometers for us metric people) from home.
+I speak 3 languages, English, Mandarin and Bahasa Malaysia. I'm from originally **Malaysia** where it's easily over 32°C [89°F] and survived the cold winters in Minnesota where it's usually -25°C [-13°F][^2].
 
-I speak 3 languages, English, Mandarin and Bahasa Malaysia.
+I am also 8037 miles away from home[^3].
 
 Though I am familiar that the generation I'm a part of [are probably unhappy](http://waitbutwhy.com/2013/09/why-generation-y-yuppies-are-unhappy.html) due to this fixation on thinking we're all special and unique, doesn't mean we all can't dream.  
 
@@ -25,3 +25,7 @@ Though I am familiar that the generation I'm a part of [are probably unhappy](ht
 Now aren't we all special snowflakes?
 
 > "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well." -*Ralph Waldo Emerson or Leo Rosten*
+
+[^1]: I usually go by my last name as my first name, because it's a common occurrence people think 'Chuan' is my middle name which gets truncated to Wen Lee. I definitely prefer just 'Lee' over the single 'Wen'. 
+[^2]: At this rate I've seen and lived with enough snow for a lifetime. 
+[^3]: That's 12934.3 kilometers for us metric people 

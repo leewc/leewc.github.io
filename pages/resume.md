@@ -19,19 +19,17 @@ search_omit: true
 - College of Science and Engineering, Senior, Class of 2016
 - CGPA: 3.48
 
-------
-
-## Skills  
-
-I'm experienced with C# and Java in a professional environment, fluent in Python, OCaml and C++. Varied and less experience with other languages such as C, XAML, VB.NET, SQL, but I know my way around good enough.
-
-Currently dabbling in web languages like JavaScript, and SASS (a superset of CSS) as well as looking at all the awesome web frameworks.
-
-Technologies I've worked with include WPF, COM/DCOM, VMware Virtualization, Git, TFS, Visual Source Safe, MSSQL, PostgreSQL and InstallShield. Take a look at my [Projects page](/projects/) for a few projects I've worked on.
-
-------
-
 ## Work Experience    
+
+### Software Development Engineer
+- **Amazon.com**
+- Seattle, Washington
+- August 2016 - *present*
+
+**What I've done:**
+- Amazon Payments
+- Alexa Video
+- *psst*: Notice how I was super wordy about what I've done and learnt in the past as opposed to now? I think that's because I didn't have many things to promote myself, and now my experience speaks for itself, funny how the more you know the less you say.
 
 
 ### Co-op Intern in Software Engineering
@@ -79,10 +77,6 @@ Performed tape backups on a supercomputer.
 ### Presenter for the USApps Workshop
 **Taylor's University**
 : I was fortunate enough for an opportunity to be give a 40 minute talk about US education pathways to attendees (over 200 students). The workshop was a great success. If you're in Malaysia and have friend or younger sibling that are considering studying in the US head on over to their [website](http://www.usapps.org/)!
-
-### Project Leader for CSE Expo
-**University of Minnesota - Twin Cities**
-: Independently designed and received funding for showcasing 2 hands-on projects (Banana Keyboard and build your own Raspberry Pi laptop) to encourage children from multiple schools to be involved with STEM fields.
 
 ### Transfer Peer Guide
 **University of Minnesota - Twin Cities**
