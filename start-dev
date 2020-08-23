@@ -1,2 +1,6 @@
+if [ "$HOSTNAME" = goorm ]; then
+	export PORT=8080;
+	export IP=0.0.0.0;
+fi
 echo 'Starting server with _config-dev.yml at port' $PORT 'and host' $IP '...'
 bundle exec jekyll serve --port $PORT --host $IP --config _config.yml,_config-dev.yml
