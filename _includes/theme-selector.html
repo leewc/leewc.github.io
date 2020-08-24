@@ -1,0 +1,72 @@
+<!-- Original implementation credits: https://derekkedziora.com/blog/dark-mode-revisited  -->
+<!-- This was included in head.html of theme, but including it here with id for selectors -->
+<link id="theme" rel="stylesheet" href="{{ site.skin | default: '/assets/css/skins/default.css' | relative_url }}">
+<script>
+// Checks whether system dark mode is set 
+let systemInitiatedDark = window.matchMedia("(prefers-color-scheme: dark)"); 
+// Checks for session storage telling to override the system preferences 
+let theme = sessionStorage.getItem("theme");
+let themeStyleSheet = document.getElementById('theme');
+
+if (systemInitiatedDark.matches) {
+	goDark();
+} else {
+	goLight();
+}
+	
+if (theme === "dark") {
+	goDark();
+	sessionStorage.setItem('theme', 'dark');
+} else if (theme === "light") {
+	goLight();
+	sessionStorage.setItem('theme', 'light');
+}
+	
+function goDark() {
+	themeStyleSheet.href = "{{ '/assets/css/skins/dark.css' | relative_url }}";
+	// Null-checks are here because the toggle might not be loaded yet (it is in a nav includes)
+	// An alternative is to include this script *after* navigation.html, but want to reduce flash of unstyled text.
+	if (document.getElementById("theme-toggle") != null) {
+		document.getElementById("theme-toggle").innerHTML = "💡"
+		document.getElementById('theme-toggle').setAttribute('title', 'Turn on the Lights');
+	}
+}
+	
+function goLight() {
+	// I like default more than light.css
+	themeStyleSheet.href = "{{ '/assets/css/skins/default.css' | relative_url }}";
+	if (document.getElementById("theme-toggle") != null) {
+		document.getElementById("theme-toggle").innerHTML = "🌙"
+		document.getElementById('theme-toggle').setAttribute('title', 'Dark Mode');
+	}
+}
+	
+function prefersColorTest(systemInitiatedDark) {
+  if (systemInitiatedDark.matches) {
+	goDark();
+   	// clear the session storage 
+   	sessionStorage.setItem('theme', '');
+  } else {
+	goLight();
+    sessionStorage.setItem('theme', '');
+  }
+}
+systemInitiatedDark.addListener(prefersColorTest);
+
+function themeSelector() {
+	let theme = sessionStorage.getItem('theme');
+	if (theme === "dark") {
+		goLight();
+		sessionStorage.setItem('theme', 'light');
+	}	else if (theme === "light") {
+		goDark();
+		sessionStorage.setItem('theme', 'dark');
+	} else if (systemInitiatedDark.matches) {	
+		goLight();
+		sessionStorage.setItem('theme', 'light');
+	} else {
+		goDark();
+		sessionStorage.setItem('theme', 'dark');
+	}
+}
+</script>

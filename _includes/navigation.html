@@ -1,0 +1,19 @@
+{% if site.data.navigation %}
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">{{ site.data.text[site.locale].menu_label | default: 'Menu' }}</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul>
+        {%- for link in site.data.navigation -%}
+          {%- if link.url contains '://' -%}
+            {%- assign url = link.url -%}
+          {%- else -%}
+            {%- assign url = link.url | relative_url -%}
+          {%- endif -%}
+          <li><a href="{{ url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
+		<!-- Dark mode selector -->
+		<li><a id="theme-toggle" onclick="themeSelector()" title="Toggle dark/light mode">💡</a></li>
+      </ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+{% endif %}
