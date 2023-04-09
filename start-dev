@@ -1,4 +1,8 @@
-if [ "$HOSTNAME" = goorm ]; then
+if [[ -v VSCODE_PROXY_URI ]]; then
+    echo -e "Looks like I'm running in cdr/code-server environment."
+    export PORT=8081;
+    export IP=0.0.0.0; 
+elif [ "$HOSTNAME" = goorm ]; then
 	export PORT=8080;
 	export IP=0.0.0.0;
 fi
