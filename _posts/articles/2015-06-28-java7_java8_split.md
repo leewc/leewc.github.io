@@ -1,11 +1,7 @@
 ---
-layout: post
 title : Behavior Change in String.split for Java 8
 excerpt: Java 8 now ignores 1st null element.
 date: 2015-04-11 21:36
-categories: articles
-comments : true
-share: true
 tags: [java]
 ---
 

@@ -1,11 +1,7 @@
 ---
-layout: post
 title : How to Set up GitHub Pages, Ruby, and Jekyll
 excerpt: A quick guide to making it all work.
 date: 2015-04-11 21:36
-categories: articles
-comments : true
-share: true
 tags: [tutorial, jekyll]
 ---
 

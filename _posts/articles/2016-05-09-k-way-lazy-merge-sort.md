@@ -1,12 +1,8 @@
 ---
-layout: post
 title: K-way Lazy Merge Sort
 excerpt: Sorting integers from k number of large files as lazy file streams
 modified:
-categories: articles
 tags: [java, tutorial]
-share : yes
-comments : yes
 image:
     path: images/articles/mapreduce-thrift.png
     thumbnail: images/articles/mapreduce-thrift.png

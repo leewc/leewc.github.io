@@ -1,11 +1,7 @@
 ---
-layout: post
 title: Hello World!
 excerpt: That famous line. Also, about the site logo.
-categories: blog
 tags: [helloworld, ouroboros]
-comments: true
-share: true
 image:
     path: images/blog/sausalito.jpg
     thumbnail: images/blog/sausalito.jpg

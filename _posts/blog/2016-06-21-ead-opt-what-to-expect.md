@@ -1,12 +1,8 @@
 ---
-layout: post
 title: What to Expect from the EAD/OPT Application Process
 excerpt: A walk-through on the status changes and process for the I-765 appication, especially after applying. 
 modified:
-categories: blog
 tags: [visa, opt, ead]
-comments: true
-share: true
 image:
     path: images/blog/chicagoPier.jpg
     thumbnail: images/blog/chicagoPier.jpg

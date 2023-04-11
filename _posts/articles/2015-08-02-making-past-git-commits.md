@@ -1,11 +1,7 @@
 ---
-layout: post
 title : Making Git Commits in the Past
 excerpt: Go back in time to make or edit commit.
 date: 2015-08-02 21:51
-categories: articles
-comments : true
-share: true
 tags: [tutorial, git]
 ---
 

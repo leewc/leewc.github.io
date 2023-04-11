@@ -102,17 +102,33 @@ defaults:
     values:
       layout: post
       share: true
+      comments: true
+      readtime: true
+  - scope:
+      path: "_posts/articles"
+    values:
+      categories: articles
+  - scope:
+      path: "_posts/blog"
+    values:
+      categories: blog
 
 # # Site Author
 author:
   name: Wen Chuan Lee
 #   picture:
 #   email:
-#   twitter:
-#   links:
-#     - title:
-#       url:
-#       icon:
+  links:
+    - title: Twitter
+      url: https://twitter.com/wenchuanlee
+      icon: fab fa-twitter-square
+    - title: GitHub
+      url: https://github.com/leewc
+      icon: fab fa-github-square
+    - title: StackOverflow
+      url: https://stackoverflow.com/users/4512948/matrixanomaly
+      icon: fab fa-stack-overflow
+
 
 # Footer Links
 footer_links:

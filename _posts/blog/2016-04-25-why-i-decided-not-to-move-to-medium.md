@@ -1,16 +1,14 @@
 ---
-layout: post
 title: Why I Decided Not to Move to Medium
 excerpt: Should you though? 
-modified:
-categories: blog
+last_modified_at: 2023-04-11T07:01:27+00:00
 excerpt:
 tags: []
 date: 2016-04-29T07:01:27+00:00
-comments: true
-share: true
-link: https://medium.freecodecamp.com/we-just-abandoned-our-blog-for-medium-you-probably-should-too-33e742a1d49
+link: https://www.freecodecamp.org/news/we-just-abandoned-our-blog-for-medium-you-probably-should-too-33e742a1d49/
 ---
+
+Update (2023-04-11): When cleaning up the site, looks like FreeCodeCamp moves back to their own blog [after being pressured to put articles behind a paywall](https://forum.freecodecamp.org/t/we-just-launched-developer-news-heres-how-you-can-use-it/279929). I've updated the link above to reflect the new location. (How meta. Also, sad how medium.freecodecamp.com didn't semalessly redirect!) 
 
 Recently as I've just revamped my blog a thought came to my mind that must have crossed everyone's mind. 
 

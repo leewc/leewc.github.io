@@ -3,11 +3,7 @@ layout: post
 title: Out of Stock - An IKEA Stock Checker
 excerpt: Using Puppeteer, Headless Recorder and NodeJS to check if IKEA furniture (or meatballs) are in stock
 modified: 2020-12-10
-categories: articles
 tags: [puppeteer, js, javascript]
-comments: true
-share: true
-readtime: true
 date: 2021-03-15
 ---
 

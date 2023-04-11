@@ -1,12 +1,8 @@
 ---
-layout: post
 title: How to Merge Multiple Git Repositories Into One Repo
 excerpt: Tutorial on combining smaller repos into a large master repo
 modified:
-categories: articles
 tags: [tutorial, git]
-comments: true
-share: true
 date: 2016-04-13T01:25:28+00:00
 ---
 

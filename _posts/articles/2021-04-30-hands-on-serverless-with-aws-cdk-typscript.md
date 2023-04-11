@@ -1,12 +1,7 @@
 ---
-layout: post
 title: Hands-on AWS CDK for Serverless
 excerpt: Leverage AWS CDK to build a sample serverless app (using Node, TypeScript, Lambda, API Gateway)
 modified:
-categories: articles
-comments: true
-share: true
-readtime: true
 date: 2021-04-30
 ---
 
