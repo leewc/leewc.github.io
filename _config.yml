@@ -61,6 +61,7 @@ kramdown:
   enable_coderay: false
 
 # Pagination - https://jekyllrb.com/docs/pagination/
+# https://github.com/mmistakes/so-simple-theme/#pagination
 # paginate: 10
 # paginate_path: /page:num/
 
