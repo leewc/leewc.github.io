@@ -1,0 +1,76 @@
+#! /bin/bash
+verbose=false
+
+log() {
+    if $verbose
+    then echo $@
+    fi
+}
+
+directory_exists() {
+    if test -d $1; then
+        log "Directory $1 exists."
+        return 0;
+    fi
+    return 1;
+}
+
+open_with_vscode() {
+    if command -v code &> /dev/null
+    then code $1
+    fi
+}
+
+template() {
+    cat <<EOF
+---             
+title:           
+excerpt:        
+modified:       
+tags: []        
+image:          
+    path:       
+    thumbnail:  
+date: $1        
+---             
+EOF
+}
+
+main() {
+    
+    while [[ "$#" -gt 0 ]]; do
+        case $1 in
+            -t|--type) type="$2"; shift ;;
+            -n|--name) name="$2"; shift ;;
+            -v|--verbose) verbose=true ;;
+            *) echo "Unknown parameter passed in: $1"; exit 1 ;;
+        esac
+        shift
+    done
+
+    if [ -z "$type" ] || [ -z "$name" ]; then
+        echo "Must provide params name (-n) and type (-t)" 1>&2
+        exit 1
+    fi
+
+    local directory="_posts/$type"
+    if directory_exists $directory; 
+    then
+        local today=$(TZ=America/Los_Angeles date '+%Y-%m-%d')
+        log "today: $today, type: $type, verbose: $verbose"
+
+        local filename="$today-$name.md"
+        local filepath="$directory/$filename"
+        log "Creating $filename in $directory."
+        
+        template $today > $filepath
+        
+        open_with_vscode $filepath
+        exit 0
+    else 
+        echo "Directory $directory not found. Please specify either one of the following: [$(ls _posts/ | tr "\n" "\t")]"
+        exit 1
+    fi
+}
+
+main $@
