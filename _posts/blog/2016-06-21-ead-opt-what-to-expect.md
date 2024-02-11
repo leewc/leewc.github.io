@@ -1,6 +1,6 @@
 ---
 title: What to Expect from the EAD/OPT Application Process
-excerpt: A walk-through on the status changes and process for the I-765 appication, especially after applying. 
+# excerpt A walk-through on the status changes and process for the I-765 appication, especially after applying. 
 modified:
 tags: [visa, opt, ead]
 image:

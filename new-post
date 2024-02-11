@@ -25,7 +25,7 @@ template() {
     cat <<EOF
 ---             
 title:           
-excerpt:        
+# excerpt        
 modified:       
 tags: []        
 image:          

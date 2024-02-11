@@ -1,8 +1,8 @@
 ---
 title: Why I Decided Not to Move to Medium
-excerpt: Should you though? 
+# excerpt Should you though? 
 last_modified_at: 2023-04-11T07:01:27+00:00
-excerpt:
+# excerpt
 tags: []
 date: 2016-04-29T07:01:27+00:00
 link: https://www.freecodecamp.org/news/we-just-abandoned-our-blog-for-medium-you-probably-should-too-33e742a1d49/

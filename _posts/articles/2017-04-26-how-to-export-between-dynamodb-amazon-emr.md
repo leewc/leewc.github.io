@@ -1,6 +1,6 @@
 ---
 title: How to Modify and Export Data between DynamoDB Tables with Amazon EMR
-excerpt: Leveraging Amazon EMR technologies and Apache Hive to copy DynamoDB tables on-the-fly.
+# excerpt Leveraging Amazon EMR technologies and Apache Hive to copy DynamoDB tables on-the-fly.
 modified:
 tags: [amazon,aws,dynamodb,data,migration,emr]
 image:

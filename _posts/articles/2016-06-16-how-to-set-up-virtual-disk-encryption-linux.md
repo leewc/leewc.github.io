@@ -1,6 +1,6 @@
 ---
 title: How to Set Up Virtual Disk Encryption on GNU/Linux that Unlocks at Boot
-excerpt: Tutorial on an encrypted container on Debian that unlocks at boot with cryptsetup and dm-crypt 
+# excerpt Tutorial on an encrypted container on Debian that unlocks at boot with cryptsetup and dm-crypt 
 modified:
 tags: [tutorial, ubuntu, linux, debian, encryption]
 image:

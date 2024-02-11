@@ -1,6 +1,6 @@
 ---
 title: How to Install Unicode Support on Crouton
-excerpt: .. and Asian Language Input Support on the popular Crouton on ChromeOS/Chromebook.
+# excerpt .. and Asian Language Input Support on the popular Crouton on ChromeOS/Chromebook.
 modified:
 tags: [chrome, crouton]
 image: 

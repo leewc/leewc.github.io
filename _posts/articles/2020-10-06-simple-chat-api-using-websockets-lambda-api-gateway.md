@@ -1,6 +1,6 @@
 ---
 title: Build a Simple Chat API on Websockets 
-excerpt: Using AWS Lambda and API Gateway and wsclient
+# excerpt Using AWS Lambda and API Gateway and wsclient
 modified:
 tags: [aws, lambda, websockets]
 date: 2020-10-16

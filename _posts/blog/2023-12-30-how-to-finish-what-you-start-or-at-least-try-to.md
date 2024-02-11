@@ -1,6 +1,6 @@
 ---             
 title: How to finish what you start      
-excerpt: ... or at least try to.
+# excerpt ... or at least try to.
 modified: 2024-01-19
 tags: [ procrastination ] 
 image:          

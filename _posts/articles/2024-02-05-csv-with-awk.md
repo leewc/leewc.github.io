@@ -1,6 +1,6 @@
 ---             
 title: How to process CSV with Awk          
-excerpt: .. and invoke an external command
+# excerpt .. and invoke an external command
 tags: [tutorial, shell]
 date: 2024-02-05
 modified: 2024-02-10
