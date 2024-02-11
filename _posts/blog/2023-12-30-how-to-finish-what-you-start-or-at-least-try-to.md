@@ -6,7 +6,7 @@ tags: [ procrastination ]
 image:          
     path:  /images/blog/lawn-mowing.jpg
     thumbnail: /images/blog/lawn-mowing.jpg
-date: 2023-12-30        
+date: 2023-12-30
 ---             
 
 TL;DR: Sometimes keeping accountable with deadlines, buddies, and reducing the barrier to start does wonders as opposed to procrastinating.

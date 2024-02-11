@@ -2,7 +2,8 @@
 title: How to process CSV with Awk          
 excerpt: .. and invoke an external command
 tags: [tutorial, shell]
-date: 2024-02-05        
+date: 2024-02-05
+modified: 2024-02-10
 ---             
 
 # TL;DR
@@ -89,12 +90,16 @@ bob,6,90,9f9d51bc70ef21ca5c14f307980a29d8
 AWK itself has been confusing for me throughout the years. So breaking this down step by step:
  - `cat example.csv` will pipe out the contents of the file into AWK
  - `-F','` defines you want to separate the string on ','
- - `cmd="./md5.sh " ` creates a variable in awk and allows for commands to be executed
+ - `cmd="./md5.sh " ` creates a variable in awk and allows for commands to be executed. Note the extra space after the script name, it's necessary otherwise AWK will not leave a space in between the command and the value passed in.
  - `cmd $1` tells AWK to run the cmd variable with $1, which in our example above, be `jane`, `john`, `alice`, `bob`.
  - `| getline result` will store the output of the executed command (output of `md5.sh`)
  - `close(cmd)` simply closes the temporary files created
  - Finally, the print command dictates `$0` (the whole string), and `","` and the `"result"`
 
+
+> Update 
+> Turns out the command above might also include the return code, depending on the script and version of awk. Here's another one to try:
+> `cat example.csv| awk -F',' '{ cmd="./md5.sh "$1 ;while ( ( cmd | getline result ) > 0 ) {print result","$0 } close(cmd)}'`
 
 Hope this was helpful! 
 
@@ -167,3 +172,8 @@ Finally, be weary about the CSV you handle, you are susceptible to [shell inject
 - [https://www.gnu.org/software/gawk/manual/html_node/Getline.html](https://www.gnu.org/software/gawk/manual/html_node/Getline.html)
 
 - [https://www.gnu.org/software/gawk/manual/html_node/Getline_002fPipe.html](https://www.gnu.org/software/gawk/manual/html_node/Getline_002fPipe.html) --> See "Note" here on how different versions behave differently.
+
+- [https://pmitev.github.io/to-awk-or-not/More_awk/Input_output/](https://pmitev.github.io/to-awk-or-not/More_awk/Input_output/)
+
+- [https://stackoverflow.com/questions/1960895/assigning-system-commands-output-to-variable](https://stackoverflow.com/questions/1960895/assigning-system-commands-output-to-variable)
+
