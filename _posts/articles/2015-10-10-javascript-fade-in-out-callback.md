@@ -1,6 +1,6 @@
 ---
 title : How to Fade Out/In in JavaScript Properly
-# excerpt Of Transitions, Wait, and Callbacks in JS
+excerpt: Of Transitions, Wait, and Callbacks in JS
 date: 2015-10-10 01:17
 tags: [tutorial, javascript]
 ---

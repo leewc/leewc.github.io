@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-# excerpt ""
+excerpt: ""
 modified: 2023-04-10T23:15:00.000000-07:00
 permalink: /about/
 image:

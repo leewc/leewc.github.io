@@ -1,6 +1,6 @@
 ---
 title: Fluent builders with custom build logic in Java
-# excerpt And Bob's your Uncle for object creation!
+excerpt: And Bob's your Uncle for object creation!
 modified:
 tags: [java, lombok, builders]
 date: 2018-09-01

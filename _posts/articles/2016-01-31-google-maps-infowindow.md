@@ -1,6 +1,6 @@
 ---
 title : How to have multiple InfoWindows in Google Maps
-# excerpt Allowing each marker to have it's own info window
+excerpt: Allowing each marker to have it's own info window
 date: 2016-01-31 01:56
 tags: [tutorial, javascript]
 ---

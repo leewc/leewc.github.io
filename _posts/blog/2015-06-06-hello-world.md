@@ -1,6 +1,6 @@
 ---
 title: Hello World!
-# excerpt That famous line. Also, about the site logo.
+excerpt: That famous line. Also, about the site logo.
 tags: [helloworld, ouroboros]
 image:
     path: images/blog/sausalito.jpg

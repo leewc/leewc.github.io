@@ -1,6 +1,6 @@
 ---
 title: Projects
-# excerpt A few thing's I've worked on.
+excerpt: A few thing's I've worked on.
 layout: category
 permalink: /projects/
 search: false
