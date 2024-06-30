@@ -485,7 +485,15 @@ ISP (outdoor) --> FTTH/ONT (outdoor - PoE powered)
                             |--> Server (Rock5 SBC, ethernet)
 ```
 
-I'd prefer if the ONT went to the router in the structured media enclosure, then I can hook up the router to the switch directly, instead of now relying on the wireless backhaul still, but I don't want to put a mesh router in an enclosed metal box, basically a Faraday cage. I'll upgrade it someday. This way at least we have high speed switching on local network.
+I'd prefer if the ONT went to the router in the structured media enclosure, then I can hook up the router to the switch directly, instead of now relying on the wireless backhaul still, but I don't want to put a mesh router in an enclosed metal box, basically a Faraday cage and killing my wifi range. I'll upgrade it someday. This way at least we have high speed switching on local network.
+
+### A note on power draw
+
+Since this is going to run 24/7/365, I relied on a TP Link smart switch to measure it's power use. When it's idle it is taking up 8.3W, and the ONT brings it up to 8.6W, adding the 5V Step down converter and a Wyze v2 security camera it spikes up to 11.9W. Screenshot from Home Assistant:
+
+![alt text](../../images/articles/home-network/2024-05-18-upgrade-internet-from-phone-to-ethernet-26.png)
+
+The camera appears to pull more power when there's detection events, hovering between 11.8W to 13W. In the 2 weeks I had it, it's drawn 2kWh (extrapolating it it's 4kwh a month, which is roughly $0.80 if we look at 'laptop' similar value [here](https://www.pse.com/en/rebates/energy-cost-guide)), so it's fairly power efficient!
 
 ## Bonus Speed Test
 
