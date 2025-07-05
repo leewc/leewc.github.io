@@ -1,0 +1,122 @@
+---             
+title: Radxa Rock5b U-boot NVME recovery
+excerpt: How to recover Debian/Ubuntu boot from initramfs recovery
+tags: [linux, boot]        
+image:          
+    path: /images/u-boot-logo.png
+    thumbnail: /images/u-boot-logo.png
+date: 2025-07-04        
+---             
+
+This post will show you a potential way to recover from an unbootable OS broken by a routine `sudo apt-get upgrade`. 
+
+### Issue and Background 
+
+I have a Radxa Rock5b SBC (single board computer) as my homelab. Over the 2 years since it was launched, there've been mutliple fixes and updates. One of these packages (I don't know exactly which one, uboot, probably). Would update and result in my SBC being unable to boot. 
+
+The error is: `initramfs` cannot find root.
+
+My setup is non-standard which is why I think I keep running into this. Typically Radxa images expect the root file system to run on a microSD, but I moved mine to an NVME SSD for ultra fast boot times and longevity (microSD cards aren't the most reliable).
+
+### Pain 
+
+This is quite frustrating as my SBC doesn't have a KVM nor a monitor nearby. Which means I have to:
+ - Move the SBC and plug it into a monitor and keyboard to debug (I typically do SSH)
+ - Try and boot a recovery LiveCD via SD or USB on my SBC and editing the rootFS.
+ - Physically *remove* my NVMe SSD from the SBC (ugh) the SSD and move it to another PC, mount it and get access to the root file system. 
+
+The first one is often the least painful, as the SBC's bootloader (in the SPI flash) version of U-boot prioritizes NVMe boot over microSD. [It's one of the steps when using an NVME SSD](https://wiki.radxa.com/Rock5/install/nvme) to write [a different bootloader](https://wiki.radxa.com/Rock5/install/spi). 
+
+To avoid me having to re-remember these changes in the future when an update breaks my homelab again, I'm documenting it here. I was optimistic over the weekend that an update wouldn't break it (after y'know being 10 months behind), thinking that recent changes to U-boot avoids this, but here we are.
+
+### Trying to recover
+
+I found a way to recover by simply getting access to the console by plugging a monitor and keyboard. This avoids using Serial UART console as well, and if I have a KVM (like PiKVM) you can still do this. 
+
+> Caveat: In my attempt to fix I noticed everyone's Busybox Initramfs environment is different so what works here may not work for you verbatim. It helps rather to test your boot environments tools to see what commands are functionally similar. I'll link the original post which I had that inspiration from as well [^2] at the end.
+
+#### Manually Mount RootFS
+
+Once you have access to the failed boot, you'll be dropped into `initramfs`. After which if you don't have any driver issues barring you from mounting the NVMe drive, it's simply the following to mount: 
+s
+```
+mkdir /newroot
+mount -t ext4 -w /dev/nvme0n1p0 /newroot
+```
+
+If you don't know which one is your NVMe drive, `blkid` should do the trick to show you all block devices connected. This will show you which one is `rootfs`. (I use sudo below as I've recovered, but sudo isn't required when you're in initramfs)/ 
+
+```
+rhea:~:% sudo blkid
+[sudo] password for XXX:
+/dev/nvme0n1p1: LABEL_FATBOOT="config" LABEL="config" UUID="93C3-370E" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="config" PARTUUID="4d2011fe-8d7d-4737-8306-97XXXXXXXXX"
+/dev/nvme0n1p2: LABEL="rootfs" UUID="8e6fd349-3156-4cc8-9683-XXXXXXXXX" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="rootfs" PARTUUID="f2acaf14-f6e6-48f3-a428-c1XXXXXXXXX"
+/dev/nvme0n1p3: UUID="6371481d-f574-460b-95c5-XXXXXXXXX" UUID_SUB="23de3752-baba-43ce-bf9f-5XXXXXXXXX" BLOCK_SIZE="4096" TYPE="btrfs" PARTUUID="c0efbaff-c2cc-480d-ad3e-36291a74b995"
+/dev/zram0: UUID="76ca460d-747f-484f-ae2d-XXXXXXXXX" TYPE="swap"
+/dev/mtdblock0: PTUUID="01714d9f-d3a6-40f7-ab2e-8f9cd3b1aeff" PTTYPE="gpt"
+```
+
+If your `mount` is a different version, try other syntax. Essentially what we're doing is mounting a block device that is of `ext4` format to a folder. Ideally with `write` (`-w`) perms.
+
+It'll help to also note the `UUID` of `rootfs`. In the example above: `8e6fd349-3156-4cc8-9683-XXXXXXXXX`
+
+##### Switch Root 
+
+##### Update `extlinux.conf` with RootFS and Reboot
+
+For the case of U-boot, it looks like the update botched extlinux.conf or where-ever Uboot reads and regenerates the boot configuration from. As such we need to modify `extlinux.conf` with the right UUID.
+
+```
+nano /boot/extlinux.conf
+```
+
+While technically you could mount and edit the file with just `initramfs` and not switch root, I found this very hard to do given there's no text editor in the version of busybox. Previously I took the SSD out and placed it in another machine just to mount it!
+
+```
+# Sample extlinux.conf
+
+## /boot/extlinux/extlinux.conf
+##
+## IMPORTANT WARNING
+##
+## The configuration of this file is generated automatically.
+## Do not edit this file manually, use: u-boot-update
+
+default l0
+menu title U-Boot menu
+prompt 0
+timeout 50
+
+
+label l0
+	menu label Debian GNU/Linux 11 (bullseye) 5.10.110-39-rockchip
+	linux /boot/vmlinuz-5.10.110-39-rockchip
+	initrd /boot/initrd.img-5.10.110-39-rockchip
+	fdtdir /usr/lib/linux-image-5.10.110-39-rockchip/
+
+	append quiet splash loglevel=4 rw earlycon consoleblank=0 console=tty0 console=ttyFIQ0,1500000n8 console=ttyAML0,115200n8 console=ttyS2,1500000n8 console=ttyS0,1500000n8 coherent_pool=2M irqchip.gicv3_pseudo_nmi=0 cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1 quiet splash loglevel=4 rw earlycon consoleblank=0 console=tty0 console=ttyFIQ0,1500000n8 console=ttyAML0,115200n8 console=ttyS2,1500000n8 console=ttyS0,1500000n8 coherent_pool=2M irqchip.gicv3_pseudo_nmi=0 cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1
+```
+
+Even through the above does say 'do not edit'. To recover, add this to the end (right after `swapaccount`): `root=UUID=8e6fd349-3156-4cc8-9683-XXXXXXXXX`
+
+Make sure you save! If you're not confident you can always `cp` a backup copy, but at this point, your system was already unbootable to begin with..
+
+Finally, power off and reboot. I hope it works for you now!
+
+#### Why does this work?
+
+Uboot is less known compared to GRUB bootloader, but the idea is the same: The computer loads U-boot from SPI flash (Serial Peripheral Interface flash) into memory. U-boot then attempts to load up the kernel, device tree, and a ramdisk if required. After which, it passes the control to the operating system. Somewhere along the way, U-boot needs to know which filesystem contains root, and proceed to mount it. This change hardcodes the UUID of the FS we expect and proceeds to boot.
+
+### What is the root cause?
+
+Honestly, I'm still not 100% sure. I think U-boot is not generating a valid `extlinux.conf` by getting a valid mount from `/etc/fstab` which is used during boot. Radxa's updates to uboot kicks of a U-boot update which regenerates `extlinux.conf` and can't use the default UUID, my assumption was it was targeting an SD card by default, and for some reason my NVMe's UUID doesn't line up with U-boot.
+
+Diving deeper, in the forum post [^3], it looks like U-boot generates a valid `extlinux.conf` using the logic of parsing `/etc/fstab`. And somehow, when I run `u-boot-update`, it doesn't seem to find the root and set it in extlinux. Perhaps I should try not using UUID and use some other identifier. 
+
+I hope this helped, it was quite annoying for me to have to fix this twice in the last year, or miss out on updates. I'm documenting it here to help someone else as well as myself since I tend to forget intricacies and have to relearn them from the pain.
+
+References:
+
+[^1]: https://unix.stackexchange.com/questions/546125/how-does-initramfs-mount-root-filesystem
+[2]: https://forum.radxa.com/t/radxa-debian-distribution-on-a-rock-5b-bricked-with-root-complaint-on-boot-after-aptitude-upgrade/22229
+[^3]: https://salsa.debian.org/debian/u-boot-menu/-/blob/debian/master/u-boot-update?ref_type=heads#L64-83
