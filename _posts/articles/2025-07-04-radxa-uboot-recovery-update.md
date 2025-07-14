@@ -2,13 +2,15 @@
 title: Radxa Rock5b U-boot NVME recovery
 excerpt: How to recover Debian/Ubuntu boot from initramfs recovery
 tags: [linux, boot]        
-image:          
-    path: /images/u-boot-logo.png
-    thumbnail: /images/u-boot-logo.png
 date: 2025-07-04        
 ---             
 
+<p align="center">
+  <img src="/images/u-boot-logo.png"/>
+</p>
+
 This post will show you a potential way to recover from an unbootable OS broken by a routine `sudo apt-get upgrade`. 
+
 
 ### Issue and Background 
 
