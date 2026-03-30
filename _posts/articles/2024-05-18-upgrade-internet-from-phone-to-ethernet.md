@@ -13,7 +13,9 @@ This article documents my journey in upgrading my home network. Currently, my ho
 
 ## TL;DR
 
-I watched a few videos that inspired me to go re-cabling my phone jacks, and found that indeed, wired is always better than wireless, and if you're lucky you can upgrade without replacing any in-wall cables. Second takeaway is your network is as fast as the weakest link, so look everywhere to understand what the bottleneck might be. Also, Cat5E can go faster than the rated 1Gbps despite common myth it cannot, if your hardware supports it. Scroll down to see speed comparisions! As bonus I added a 2.5GbE switch and I have super fast home networking now.
+I watched a few videos that inspired me to go re-cabling my phone jacks, and found that indeed, wired is always better than wireless, and if you're lucky you can upgrade without replacing any in-wall cables. Second takeaway is your network is as fast as the weakest link, so look everywhere to understand what the bottleneck might be. Also, Cat5E can go faster than the rated 1Gbps despite common myth that it cannot go beyond 1Gbps, if your hardware supports it. Scroll down to see speed comparisions! As bonus I added a 2.5GbE switch and I have super fast home networking now.
+
+FYI: Cat5e is rated for 1Gbps at 100m. Running 2/5GBASE-T over Cat5e is part of the IEEE 802.3bz standard (2016), so this is not some hack - it's officially supported up to ~100m.
 
 ### Background
 
@@ -220,7 +222,7 @@ So it looks like the wireless backhaul of my router is pretty good as it is for 
 
 ## How to Upgrade
 
-From the youtube video and many deep dives, it appears that many homes already have ethernet wiring, but perhaps due to the year the house was built (ours was 2000s), when phones were still prevalent, many home builders provided a phone jack, and for many American homes, a coaxial cable for cable internet and cable TV.
+From the youtube video and many deep dives, it appears that many homes already have ethernet wiring, but perhaps due to the year the house was built (ours was 2000s), when phones were prevalent (I think they were prevalent up till 2010s), many home builders provided a phone jack, and for many American homes, a coaxial cable for cable internet and cable TV.
 
 Opening up one of the wall face plate would quickly tell you if you can do it, you should see an ethernet cable (most probably Cat5 or Cat5e) with only 2 wires connected to the phone jack!
 
@@ -392,7 +394,7 @@ And with parallel `4`:
 
 ### Test: Download a file from plex
 
-A healthy 62-69 MB/s!
+A healthy 62-69 MB/s! I believe this was because of Wifi 6 as Wifi 5 (802.11ac) on a Chromebook typically maxes around 300-400 Mbps real-world
 
 ![alt text](../../images/articles/home-network/2024-05-18-upgrade-internet-from-phone-to-ethernet-2.png)
 
@@ -501,7 +503,7 @@ Excited this saga is almost over, I attempted a file download, interestingly, it
 
 ![can't top 47.5 MB/s](../../images/articles/home-network/2024-05-18-upgrade-internet-from-phone-to-ethernet-24.png)
 
-Only 47.5 MB/s? What gives, 2.5gbE should be around 300 Mb/s (convert 2500 mbps to MB/s). I later found out I had a been using an old Cat5 (not Cat5e) cable between my home server and the wall. Networking really is only as fast as the weakest link. Swapping that out and `iperf` shows the max between client and server!
+Only 47.5 MB/s? What gives, 2.5gbE should be around 300 MB/s (convert 2500 mbps to MB/s). I later found out I had a been using an old Cat5 (not Cat5e) cable between my home server and the wall. Networking really is only as fast as the weakest link. Swapping that out and `iperf` shows the max between client and server!
 
 ```
 leewc@penguin:~$ iperf3 -c 192.168.1.2
@@ -551,7 +553,7 @@ If you made it to the end, thank you for reading and your time!
 
 [^1]: It all started from how I can upgrade an existing phone jack to an ethernet jack late Friday night, then a couple videos [https://www.youtube.com/watch?v=ieBbbkXPO2U](https://www.youtube.com/watch?v=ieBbbkXPO2U) and [https://www.youtube.com/watch?v=0euB3nAe6qI](https://www.youtube.com/watch?v=0euB3nAe6qI) and [https://www.youtube.com/watch?v=HYl1W8bN1fQ&t=97s](https://www.youtube.com/watch?v=HYl1W8bN1fQ&t=97s)...Rabbit hole!
 
-[^2]: I had a 5 port switch but no power supply. So I went ahead and purchased one that was 2A thinking the device would only pull what it needs. I accidentally fried it when I fed a 2 amp and 3 amp power supply to it. At 2A It would reboot all the time, then unluckily the nearby power supply I had was for an audio amp, which is 3A. Plugging it in I heard a whine noise, followed by a *pop*, and some smell of burnt electronics coming up (magic smoke). RIP little switch.
+[^2]: I had a 5 port switch but no power supply. So I went ahead and purchased one that was 5V 2A thinking the device would only pull what it needs. I accidentally fried it when I fed a higher volt power supply to it. At 5V 2A It would reboot all the time, then unluckily the nearby power supply I had was for an audio amp, which is 12V 3A. Plugging it in I heard a whine noise, followed by a *pop*, and some smell of burnt electronics coming up (magic smoke). RIP little switch. I think the switch was likely expecting 9V/0.6A ? Either way, don't plug random power supplies in despite the same barrel port size!
 
 [^3]: Because I'm cheap and there's no need in this household to top that. The upload has really helped in video conference meetings (Amazon Chime) where others have trouble due to Comcast cable internet.
 
