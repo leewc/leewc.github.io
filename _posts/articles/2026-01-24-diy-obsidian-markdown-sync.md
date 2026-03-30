@@ -29,7 +29,7 @@ A quick and dirty solution is Unison or Rsync. To keep things simple and use exi
 Command is easy:
 
 ```
-rsync -razu /Users/myUserName/Library/Drive-Documents/obsidian/notes/ xxx@example.com:/home/myUserName/media-homelab/docs/documents/nyUserName/notes
+rsync -razu --delete-after /Users/myUserName/Library/Drive-Documents/obsidian/notes/ xxx@example.com:/home/myUserName/media-homelab/docs/documents/nyUserName/notes
 ```
 
 What the flags mean:
@@ -39,7 +39,10 @@ What the flags mean:
 -a : Archive (preserve read time stamps)
 -z : Use text compression to reduce network overhead
 -u : Update (skip files newer on receiver)
+--delete-after:  deletes after the transfer completes (safer than the default --delete-before if the transfer gets interrupted)
 ```
+
+If you're not confident, add `-n` and `-v` to see a dryrun of what rsync will do!
 
 A great resource for me to understand rysnc is this blog post by DigitalOcean: https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories#using-rsync-to-sync-with-a-remote-system
 
@@ -92,6 +95,7 @@ Rather, it turns out `launchdaemon` is the preferred method for Mac
 	    <array>
 	        <string>/usr/bin/rsync</string>
 	        <string>-razu</string>
+          <string>--delete-after</string>
 	        <string>/Users/myUserName/Library/Drive-Documents/obsidian/notes/</string>
 	        <string>xxx@example.com:/home/xxx/media-homelab/docs/documents/xxx/notes</string>
 	    </array>
