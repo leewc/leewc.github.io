@@ -117,6 +117,58 @@ Diving deeper, in the forum post [^3], it looks like U-boot generates a valid `e
 
 I hope this helped, it was quite annoying for me to have to fix this twice in the last year, or miss out on updates. I'm documenting it here to help someone else as well as myself since I tend to forget intricacies and have to relearn them from the pain.
 
+### Update (April 2026): Found the actual root cause and a permanent fix
+
+Almost a year later, I finally found the actual bug. Shoutout to [Kiro](https://kiro.dev) for helping me trace through the `u-boot-update` script and figure this out.
+
+The `u-boot-update` script (`/usr/sbin/u-boot-update`) resolves the root filesystem in this order:
+
+1. If `/etc/kernel/cmdline` exists, extract `root=` from it using sed
+2. If that didn't find root, fall back to parsing `/etc/fstab`
+3. If *that* didn't work either, read `/proc/cmdline`
+
+The problem is in step 1. My `/etc/kernel/cmdline` has kernel parameters but **no `root=` entry**. The sed regex used to extract it is:
+
+```
+sed -re 's/.*(root=[^[:space:]]*).*/\1/'
+```
+
+When there's no `root=` match, `sed` doesn't strip anything, it passes the **entire line through unchanged**. So `U_BOOT_ROOT` gets set to the whole kernel cmdline string. It's not empty, it's just garbage. And because it's not empty, the `/etc/fstab` fallback at step 2 is **skipped entirely**. The generated `extlinux.conf` ends up without a valid `root=` and boom, initramfs can't find root. Again.
+
+So all this time it wasn't that fstab was wrong or that U-boot couldn't find my NVMe. It was a sed regex that silently fails when there's no match. I'm not very clear why the root UUID was not pre-populated on Radxa's debian install.
+
+#### The permanent fix
+
+Instead of manually editing `extlinux.conf` every time (which just gets overwritten on the next u-boot package update), set `U_BOOT_ROOT` directly in `/etc/default/u-boot`:
+
+```bash
+sudo sed -i 's|#U_BOOT_ROOT=""|U_BOOT_ROOT="root=UUID=YOUR-ROOT-UUID-HERE"|' /etc/default/u-boot
+```
+
+Find your root UUID with `blkid | grep rootfs`.
+
+This is the intended user configuration file for `u-boot-update`. It's checked *first*, before `/etc/kernel/cmdline` and `/etc/fstab`, and dpkg treats it as a conffile so package updates won't silently overwrite your changes. You can verify it works by running:
+
+```bash
+sudo u-boot-update
+grep root= /boot/extlinux/extlinux.conf
+```
+
+Every label should show your correct `root=UUID=...`. With this in place, `apt-get upgrade` can safely update those radxa and u-boot packages without bricking your boot. No more unplugging SSDs or hauling the SBC to a monitor!
+
+#### A pre and post install hook
+
+Also - because I'm paranoid this might some day change in the future on `apt-get upgrade`, I decided to add a backup hook for `/boot/extlinux/extlinux.conf` for avoid this specific issue in the future.
+
+Add it in `/etc/apt/apt.conf.d/99-uboot-safeguard`
+
+```
+~:% cat /etc/apt/apt.conf.d/99-uboot-safeguard
+
+DPkg::Pre-Invoke { "cp /boot/extlinux/extlinux.conf /boot/extlinux/extlinux.conf.bak 2>/dev/null || true"; };
+DPkg::Post-Invoke { "if [ -f /boot/extlinux/extlinux.conf ]; then if diff -q /boot/extlinux/extlinux.conf /boot/extlinux/extlinux.conf.bak >/dev/null 2>&1; then echo [uboot-safeguard] extlinux.conf unchanged; else if grep -q root=UUID= /boot/extlinux/extlinux.conf; then echo [uboot-safeguard] extlinux.conf modified, root=UUID present, all good; else echo [uboot-safeguard] WARNING: root=UUID missing! Restoring backup; cp /boot/extlinux/extlinux.conf.bak /boot/extlinux/extlinux.conf; fi; fi; fi"; };
+```
+
 References:
 
 [^1]: https://unix.stackexchange.com/questions/546125/how-does-initramfs-mount-root-filesystem
